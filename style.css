@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightblue;
+  flex-direction: column;
+}
+
+/* 헤더 */
+.h1{
+  position: absolute;
+  left: 48%;
+  top: 7%;
+  color: #343434;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+/* 전체박스 */
+ #wrapper{
+  width: 440px;
+  height: auto;
+  padding-top: 3rem;
+}
+
+/* 카드 */
+.card {
+  display: inline-block;
+  width: 70px;
+  height: 100px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  perspective: 140px;
+}
+.card-inner {
+  /* position: absolute를 이용하여 카드 앞뒤를 곂쳐지게 함*/
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* 카드 돌아가기 */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 카드 앞뒷면 */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #828282;
+}
+
+
+.card-front {
+  background: rgb(75, 73, 73);
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* 게임스코어 */
+.result{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+}
+
+/* 버튼 */
+.btn{
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  margin-right: 40px;
+}
+.btn button:first-child{
+  margin-right: 40px;
+}
+.btn button{
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color:lightyellow;
+  font-size: 1.2rem;
+  pointer-events:none;
+}
