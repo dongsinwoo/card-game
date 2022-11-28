@@ -6,7 +6,7 @@ const reset = document.querySelector('.reset');
 const hint = document.querySelector(".hint");
 
 //카드 뒤 색깔 7개 2개씩 미리 설정
-let backColor = ['#FFC312', '#FFC312', '#C4E538', '#C4E538', '#12CBC4', '#12CBC4', '#ED4C67', '#ED4C67', '#FDA7DF', '#FDA7DF', '#833471', '#833471', '#60B1DF', '#60B1DF', '#39904C', '#39904C'];
+let backColor = ['./img/sun.png', './img/sun.png', './img/sword.png', './img/sword.png', './img/load.png', './img/load.png', './img/king.png', './img/king.png', './img/moon.png', './img/moon.png', './img/knight.png', './img/knight.png', './img/Queen.png', './img/cub.png', './img/cub.png', './img/Queen.png'];
 let colors = backColor.slice(); //백업 복사
 
 //클릭 flag: 카드 세팅하는 동안에 클릭 기능 방지(flag가 true일 경우에만 클릭 가능)
@@ -28,11 +28,6 @@ let hintCount = 0;
 
 // 힌트 사용시 점수 깎임
 let hintScore = 1000;
-
-const h1 = document.createElement("h1");
-h1.className = "h1"
-h1.textContent = "카드 뒤집기 게임"
-document.body.appendChild(h1);
 
 // 피셔예이츠 방식
 function shuffle() {
@@ -56,7 +51,8 @@ function cardSetting(x, y) {
     cardFront.className = 'card-front';
     const cardBack = document.createElement('div');
     cardBack.className = 'card-back';
-    cardBack.style.backgroundColor = chosenColor[i];
+    cardBack.style.background = `url(${chosenColor[i]})no-repeat center`;
+    cardBack.style.backgroundSize = "cover";
     cardInner.appendChild(cardFront);
     cardInner.appendChild(cardBack);
     card.appendChild(cardInner);
@@ -69,8 +65,8 @@ function cardSetting(x, y) {
         clickedOne.push(card); //선택한 카드 배열에 추가
         if (clickedOne.length == 2) { //선택한 카드가 2개일때
           //색깔이 같으면 계속 오픈 시킴
-          if (clickedOne[0].querySelector('.card-back').style.backgroundColor ===
-            clickedOne[1].querySelector('.card-back').style.backgroundColor) {
+          if (clickedOne[0].querySelector('.card-back').style.background ===
+            clickedOne[1].querySelector('.card-back').style.background) {
             console.log('matched!');
             completedOne.push(clickedOne[0]); //매치된 카드를 완성카드로 넣기
             completedOne.push(clickedOne[1]);

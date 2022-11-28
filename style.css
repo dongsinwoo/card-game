@@ -9,18 +9,9 @@ body{
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: lightblue;
+  background: url(./img/back.png) no-repeat center;
+  background-size: cover;
   flex-direction: column;
-}
-
-/* 헤더 */
-.h1{
-  position: absolute;
-  left: 48%;
-  top: 7%;
-  color: #343434;
-  transform: translateX(-50%);
-  font-size: 2rem;
 }
 
 /* 전체박스 */
@@ -67,10 +58,13 @@ body{
 
 
 .card-front {
-  background: rgb(75, 73, 73);
+  background: url(./img/cardback.png) no-repeat center;
+  background-size: cover;
+  border-radius: 5px;
 }
 .card-back {
   transform: rotateY(180deg);
+  border-radius: 5px;
 }
 
 /* 게임스코어 */
@@ -98,14 +92,19 @@ body{
   margin-top: 2rem;
   justify-content: center;
   margin-right: 40px;
+  margin-bottom: 6.25rem;
 }
 .btn button:first-child{
   margin-right: 40px;
 }
 .btn button{
   cursor: pointer;
-  padding: 8px 16px;
-  background-color:lightyellow;
+  padding: 8px 2.5rem;
+  background-color: rgb(140, 193, 240);
+  color:#fff ;
   font-size: 1.2rem;
   pointer-events:none;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
 }
